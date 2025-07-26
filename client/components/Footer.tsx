@@ -13,20 +13,33 @@ export default function Footer() {
               <span className="font-bold text-xl text-white">ChaiSource</span>
             </Link>
             <p className="text-white/80 mb-4 max-w-md">
-              Empowering India's street food vendors with reliable, affordable raw material sourcing. 
-              Join thousands of vendors who trust ChaiSource for their daily supplies.
+              Empowering India's street food vendors with reliable, affordable
+              raw material sourcing. Join thousands of vendors who trust
+              ChaiSource for their daily supplies.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/60 hover:text-saffron transition-colors">
+              <a
+                href="#"
+                className="text-white/60 hover:text-saffron transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-saffron transition-colors">
+              <a
+                href="#"
+                className="text-white/60 hover:text-saffron transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-saffron transition-colors">
+              <a
+                href="#"
+                className="text-white/60 hover:text-saffron transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-saffron transition-colors">
+              <a
+                href="#"
+                className="text-white/60 hover:text-saffron transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -34,25 +47,39 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-saffron">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 text-saffron">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/marketplace" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/marketplace"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   Marketplace
                 </Link>
               </li>
               <li>
-                <Link to="/vendors" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/vendors"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   For Vendors
                 </Link>
               </li>
               <li>
-                <Link to="/suppliers" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/suppliers"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   For Suppliers
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/about"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   About Us
                 </Link>
               </li>
@@ -64,22 +91,34 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4 text-saffron">Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/help" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/help"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/privacy"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-white/80 hover:text-white transition-colors">
+                <Link
+                  to="/terms"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
                   Terms of Service
                 </Link>
               </li>

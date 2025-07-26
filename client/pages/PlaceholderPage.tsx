@@ -11,15 +11,15 @@ interface PlaceholderPageProps {
   comingSoon?: boolean;
 }
 
-export default function PlaceholderPage({ 
-  title, 
-  description, 
-  comingSoon = true 
+export default function PlaceholderPage({
+  title,
+  description,
+  comingSoon = true,
 }: PlaceholderPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
@@ -33,15 +33,16 @@ export default function PlaceholderPage({
                   <p className="text-xl text-muted-foreground mb-6">
                     {description}
                   </p>
-                  
+
                   {comingSoon && (
                     <div className="bg-gradient-to-r from-saffron/10 to-turmeric/10 rounded-lg p-6 mb-8">
                       <h3 className="font-semibold text-lg mb-2 text-primary">
                         🚀 Coming Soon!
                       </h3>
                       <p className="text-muted-foreground">
-                        We're working hard to bring you this feature. 
-                        Continue chatting with our AI assistant to help us build exactly what you need.
+                        We're working hard to bring you this feature. Continue
+                        chatting with our AI assistant to help us build exactly
+                        what you need.
                       </p>
                     </div>
                   )}
@@ -55,16 +56,20 @@ export default function PlaceholderPage({
                         Back to Home
                       </Link>
                     </Button>
-                    <Button asChild className="bg-gradient-to-r from-primary to-curry hover:from-primary/90 hover:to-curry/90">
+                    <Button
+                      asChild
+                      className="bg-gradient-to-r from-primary to-curry hover:from-primary/90 hover:to-curry/90"
+                    >
                       <Link to="/marketplace">
                         <MessageCircle className="h-4 w-4 mr-2" />
                         Explore Marketplace
                       </Link>
                     </Button>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mt-6">
-                    💡 <strong>Tip:</strong> Continue prompting our AI assistant to help build this page content!
+                    💡 <strong>Tip:</strong> Continue prompting our AI assistant
+                    to help build this page content!
                   </p>
                 </div>
               </CardContent>

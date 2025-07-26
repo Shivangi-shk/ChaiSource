@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
@@ -20,7 +26,7 @@ import {
   IndianRupee,
   Package,
   Phone,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 
 export default function Marketplace() {
@@ -37,7 +43,7 @@ export default function Marketplace() {
     "Dairy Products",
     "Snack Ingredients",
     "Beverages",
-    "Packaging"
+    "Packaging",
   ];
 
   const locations = [
@@ -49,7 +55,7 @@ export default function Marketplace() {
     "Kolkata",
     "Hyderabad",
     "Pune",
-    "Ahmedabad"
+    "Ahmedabad",
   ];
 
   const suppliers = [
@@ -69,8 +75,8 @@ export default function Marketplace() {
         { name: "Fresh Onions", price: "₹30/kg", unit: "kg", inStock: true },
         { name: "Tomatoes", price: "₹40/kg", unit: "kg", inStock: true },
         { name: "Green Chilies", price: "₹80/kg", unit: "kg", inStock: false },
-        { name: "Coriander", price: "₹20/bunch", unit: "bunch", inStock: true }
-      ]
+        { name: "Coriander", price: "₹20/bunch", unit: "bunch", inStock: true },
+      ],
     },
     {
       id: 2,
@@ -86,10 +92,20 @@ export default function Marketplace() {
       badge: "Quality Certified",
       products: [
         { name: "Garam Masala", price: "₹450/kg", unit: "kg", inStock: true },
-        { name: "Turmeric Powder", price: "₹280/kg", unit: "kg", inStock: true },
-        { name: "Red Chili Powder", price: "₹320/kg", unit: "kg", inStock: true },
-        { name: "Cumin Seeds", price: "₹380/kg", unit: "kg", inStock: true }
-      ]
+        {
+          name: "Turmeric Powder",
+          price: "₹280/kg",
+          unit: "kg",
+          inStock: true,
+        },
+        {
+          name: "Red Chili Powder",
+          price: "₹320/kg",
+          unit: "kg",
+          inStock: true,
+        },
+        { name: "Cumin Seeds", price: "₹380/kg", unit: "kg", inStock: true },
+      ],
     },
     {
       id: 3,
@@ -107,8 +123,8 @@ export default function Marketplace() {
         { name: "Basmati Rice", price: "₹65/kg", unit: "kg", inStock: true },
         { name: "Wheat Flour", price: "₹35/kg", unit: "kg", inStock: true },
         { name: "Chickpea Flour", price: "₹55/kg", unit: "kg", inStock: false },
-        { name: "Semolina", price: "₹42/kg", unit: "kg", inStock: true }
-      ]
+        { name: "Semolina", price: "₹42/kg", unit: "kg", inStock: true },
+      ],
     },
     {
       id: 4,
@@ -126,23 +142,26 @@ export default function Marketplace() {
         { name: "Sunflower Oil", price: "₹130/L", unit: "L", inStock: true },
         { name: "Coconut Oil", price: "₹180/L", unit: "L", inStock: true },
         { name: "Pure Ghee", price: "₹450/kg", unit: "kg", inStock: true },
-        { name: "Mustard Oil", price: "₹150/L", unit: "L", inStock: false }
-      ]
-    }
+        { name: "Mustard Oil", price: "₹150/L", unit: "L", inStock: false },
+      ],
+    },
   ];
 
-  const filteredSuppliers = suppliers.filter(supplier => {
-    const matchesSearch = supplier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         supplier.speciality.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesLocation = !selectedLocation || selectedLocation === "All Locations" || 
-                           supplier.location.includes(selectedLocation);
+  const filteredSuppliers = suppliers.filter((supplier) => {
+    const matchesSearch =
+      supplier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      supplier.speciality.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLocation =
+      !selectedLocation ||
+      selectedLocation === "All Locations" ||
+      supplier.location.includes(selectedLocation);
     return matchesSearch && matchesLocation;
   });
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/10 to-curry/10 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,8 +170,8 @@ export default function Marketplace() {
               Find Your Perfect <span className="text-primary">Supplier</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Connect with verified suppliers offering quality ingredients at competitive prices. 
-              Delivered fresh to your location.
+              Connect with verified suppliers offering quality ingredients at
+              competitive prices. Delivered fresh to your location.
             </p>
           </div>
 
@@ -170,27 +189,37 @@ export default function Marketplace() {
                       className="pl-10"
                     />
                   </div>
-                  
-                  <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+
+                  <Select
+                    value={selectedLocation}
+                    onValueChange={setSelectedLocation}
+                  >
                     <SelectTrigger>
                       <MapPin className="h-4 w-4 mr-2" />
                       <SelectValue placeholder="Location" />
                     </SelectTrigger>
                     <SelectContent>
                       {locations.map((location) => (
-                        <SelectItem key={location} value={location}>{location}</SelectItem>
+                        <SelectItem key={location} value={location}>
+                          {location}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
 
-                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                  <Select
+                    value={selectedCategory}
+                    onValueChange={setSelectedCategory}
+                  >
                     <SelectTrigger>
                       <Filter className="h-4 w-4 mr-2" />
                       <SelectValue placeholder="Category" />
                     </SelectTrigger>
                     <SelectContent>
                       {categories.map((category) => (
-                        <SelectItem key={category} value={category}>{category}</SelectItem>
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -207,15 +236,21 @@ export default function Marketplace() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Verified Suppliers</div>
+              <div className="text-sm text-muted-foreground">
+                Verified Suppliers
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-chili">10,000+</div>
-              <div className="text-sm text-muted-foreground">Products Available</div>
+              <div className="text-sm text-muted-foreground">
+                Products Available
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-mint">99.2%</div>
-              <div className="text-sm text-muted-foreground">On-time Delivery</div>
+              <div className="text-sm text-muted-foreground">
+                On-time Delivery
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-curry">₹2.5Cr+</div>
@@ -240,7 +275,10 @@ export default function Marketplace() {
 
           <div className="grid gap-8">
             {filteredSuppliers.map((supplier) => (
-              <Card key={supplier.id} className="border-2 hover:border-primary/30 transition-colors">
+              <Card
+                key={supplier.id}
+                className="border-2 hover:border-primary/30 transition-colors"
+              >
                 <CardContent className="p-6">
                   <div className="grid lg:grid-cols-3 gap-6">
                     {/* Supplier Info */}
@@ -248,7 +286,9 @@ export default function Marketplace() {
                       <div className="flex items-start justify-between">
                         <div>
                           <div className="flex items-center space-x-2 mb-1">
-                            <h3 className="text-xl font-semibold">{supplier.name}</h3>
+                            <h3 className="text-xl font-semibold">
+                              {supplier.name}
+                            </h3>
                             {supplier.verified && (
                               <Award className="h-5 w-5 text-primary" />
                             )}
@@ -258,7 +298,10 @@ export default function Marketplace() {
                             {supplier.location}
                           </div>
                         </div>
-                        <Badge variant="secondary" className="bg-primary/10 text-primary">
+                        <Badge
+                          variant="secondary"
+                          className="bg-primary/10 text-primary"
+                        >
                           {supplier.badge}
                         </Badge>
                       </div>
@@ -267,11 +310,15 @@ export default function Marketplace() {
                         <div className="flex items-center">
                           <Star className="h-4 w-4 text-saffron fill-current mr-1" />
                           <span className="font-medium">{supplier.rating}</span>
-                          <span className="text-muted-foreground ml-1">({supplier.reviews})</span>
+                          <span className="text-muted-foreground ml-1">
+                            ({supplier.reviews})
+                          </span>
                         </div>
                       </div>
 
-                      <p className="text-muted-foreground">{supplier.description}</p>
+                      <p className="text-muted-foreground">
+                        {supplier.description}
+                      </p>
 
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
@@ -279,14 +326,18 @@ export default function Marketplace() {
                             <Truck className="h-4 w-4 mr-1" />
                             Delivery:
                           </span>
-                          <span className="font-medium">{supplier.deliveryTime}</span>
+                          <span className="font-medium">
+                            {supplier.deliveryTime}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
                           <span className="flex items-center text-muted-foreground">
                             <Package className="h-4 w-4 mr-1" />
                             Min Order:
                           </span>
-                          <span className="font-medium">{supplier.minOrder}</span>
+                          <span className="font-medium">
+                            {supplier.minOrder}
+                          </span>
                         </div>
                       </div>
 
@@ -304,19 +355,30 @@ export default function Marketplace() {
 
                     {/* Products */}
                     <div className="lg:col-span-2">
-                      <h4 className="font-semibold mb-4 text-lg">Available Products</h4>
+                      <h4 className="font-semibold mb-4 text-lg">
+                        Available Products
+                      </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {supplier.products.map((product, index) => (
-                          <Card key={index} className={`border ${!product.inStock ? 'opacity-60' : ''}`}>
+                          <Card
+                            key={index}
+                            className={`border ${!product.inStock ? "opacity-60" : ""}`}
+                          >
                             <CardContent className="p-4">
                               <div className="flex items-center justify-between mb-2">
                                 <h5 className="font-medium">{product.name}</h5>
                                 {product.inStock ? (
-                                  <Badge variant="secondary" className="bg-mint/20 text-mint">
+                                  <Badge
+                                    variant="secondary"
+                                    className="bg-mint/20 text-mint"
+                                  >
                                     In Stock
                                   </Badge>
                                 ) : (
-                                  <Badge variant="secondary" className="bg-muted text-muted-foreground">
+                                  <Badge
+                                    variant="secondary"
+                                    className="bg-muted text-muted-foreground"
+                                  >
                                     Out of Stock
                                   </Badge>
                                 )}
@@ -325,8 +387,8 @@ export default function Marketplace() {
                                 <span className="text-lg font-semibold text-primary">
                                   {product.price}
                                 </span>
-                                <Button 
-                                  size="sm" 
+                                <Button
+                                  size="sm"
                                   disabled={!product.inStock}
                                   className="bg-gradient-to-r from-primary to-curry hover:from-primary/90 hover:to-curry/90"
                                 >
@@ -357,13 +419,15 @@ export default function Marketplace() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary/10 to-curry/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Don't See What You Need?
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Don't See What You Need?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Post your requirements and let suppliers come to you with their best offers.
+            Post your requirements and let suppliers come to you with their best
+            offers.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-primary to-curry hover:from-primary/90 hover:to-curry/90">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-primary to-curry hover:from-primary/90 hover:to-curry/90"
+          >
             Post Requirement
           </Button>
         </div>
