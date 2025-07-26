@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        saffron: "hsl(var(--saffron))",
+        turmeric: "hsl(var(--turmeric))",
+        chili: "hsl(var(--chili))",
+        mint: "hsl(var(--mint))",
+        cardamom: "hsl(var(--cardamom))",
+        curry: "hsl(var(--curry))",
+        masala: "hsl(var(--masala))",
       },
       borderRadius: {
         lg: "var(--radius)",
