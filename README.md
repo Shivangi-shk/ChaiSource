@@ -55,7 +55,7 @@ Our team has 3 members, and each contributed equally:
 
 ## 🎥 Solution Demo Video
 
-📺 [Link to 5-minute solution video](#)  
+📺 https://youtu.be/RkbRoHXOilA?si=bIhWv4PuNizel-p0 
 
 ---
 
